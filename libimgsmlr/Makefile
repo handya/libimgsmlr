@@ -2,7 +2,7 @@
 
 CC=gcc
 CFLAGS=-g -Werror -fPIC -I c
-LDFLAGS=-lgd
+LDFLAGS=-L/usr/include
 
 SRCS=imgsmlr.c
 
