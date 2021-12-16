@@ -1,4 +1,5 @@
 from ctypes import *
+import ctypes
 import os.path
 import logging
 import filetype
