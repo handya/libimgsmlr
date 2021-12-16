@@ -6,7 +6,7 @@ from setuptools.command.build_ext import build_ext
 class Build(build_ext):
     def run(self):
         print("build libimgsmlr.so ...")
-        protoc_command = ["gcc", "-g", "-Werror", "-fPIC", "-lgd", "libimgsmlr/imgsmlr.c", "-shared",  "-o", "libimgsmlr/libimgsmlr.so"]
+        protoc_command = ["gcc", "-g", "-Werror", "-fPIC", "-I/usr/include", "libimgsmlr/imgsmlr.c", "-shared",  "-o", "libimgsmlr/libimgsmlr.so"]
         if subprocess.call(protoc_command) != 0:
             print("build libimgsmlr.so failed!")
             sys.exit(-1)
