@@ -10,7 +10,7 @@ so_name = "libimgsmlr.so"
 so_path_name = os.path.dirname(os.path.abspath(__file__)) + os.path.sep + so_name
 try:
     #libimgsmlr = cdll.LoadLibrary(so_path_name)
-    libimgsmlr = ctypes.CDLL(so_path_name, mode=os.RTLD_LAZY)
+    libimgsmlr = ctypes.CDLL(so_path_name, mode=os.RTLD_GLOBAL)
 except OSError as ex:
     logging.error("ctypes.cdll.LoadLibrary(%s) failed! ex: %s", so_path_name, ex)
     raise ex
