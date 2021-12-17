@@ -1,6 +1,7 @@
 from ctypes import *
 import ctypes
 import os.path
+import os
 import logging
 import filetype
 import logging
@@ -9,7 +10,7 @@ so_name = "libimgsmlr.so"
 so_path_name = os.path.dirname(os.path.abspath(__file__)) + os.path.sep + so_name
 try:
     #libimgsmlr = cdll.LoadLibrary(so_path_name)
-    libimgsmlr = ctypes.CDLL(so_path_name, mode=1)
+    libimgsmlr = ctypes.CDLL(so_path_name, mode=os.RTLD_LAZY)
 except OSError as ex:
     logging.error("ctypes.cdll.LoadLibrary(%s) failed! ex: %s", so_path_name, ex)
     raise ex
